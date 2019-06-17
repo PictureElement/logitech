@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="./style.css">
@@ -12,17 +13,22 @@
 <body>
   <header class="header">
     <a class="header__brand" href="#">
-      <img class="brand__logomark" src="" alt="logo">
-      <span class="brand__logotype">Puma</span>
+      <img class="brand__logomark" src="media/logo.svg" alt="logo">
     </a>
     <nav class="header__navbar">
       <ul class="navbar__nav">
-        <li class="nav__item"><a class="nav__link" href="#">Specifications</a></li>
-        <li class="nav__item"><a class="nav__link" href="#">Order Now</a></li>
-        <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+        <li class="navbar__item"><a class="navbar__link" href="#">Specifications</a></li>
+        <li class="navbar__item"><a class="navbar__link" href="#">Order Now</a></li>
+        <li class="navbar__item"><a class="navbar__link" href="#">Support</a></li>
       </ul>
     </nav>
-    <a class="header__cart" href="#"><img src="" alt="add to cart"></a>
+    <div class="header__tools">
+      <ul class="tools__nav">
+        <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+        <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+        <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
   </header>
 </body>
 </html>
