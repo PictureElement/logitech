@@ -1,16 +1,29 @@
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #00b8fc;
 }
+
 /**
- * Header
+ * GENERAL
+ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * HEADER
  */
 header {
+  background: #444;
+}
+
+.header__container {
   display: flex;
   width: 90%;
-  height: 15vh;
   margin: 0 auto;
   align-items: center;
-  background: #444;
+  height: 10vh;
 }
 
 .header__brand {
@@ -49,3 +62,63 @@ header {
 .tools__link {
   margin-left: 30px;
 }
+
+/*
+ * PRESENTATION
+ */
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.introduction {
+  flex: 1;
+}
+
+.text-area__heading {
+  font-size: 44px;
+  font-weight: 700;
+  margin:0;
+  /* Linear gradient text */
+  background: linear-gradient(to right, #ccc, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-area__description {
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.introduction__cta-area {
+  padding-top: 50px;
+}
+
+.cta-area__add-to-cart-btn {
+  background-color: #444;
+  width: 175px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid #444;
+  color: #fff;
+}
+
+.cta-area__online-retailers-btn {
+  background-color: transparent;
+  width: 175px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.cover {
+  flex: 1;
+}
+
