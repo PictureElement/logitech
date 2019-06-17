@@ -83,7 +83,7 @@ header {
   font-weight: 700;
   margin:0;
   /* Linear gradient text */
-  background: linear-gradient(to right, #ccc, #fff);
+  background: linear-gradient(to right, #eee, #fff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -122,8 +122,22 @@ header {
   flex: 1;
 }
 
-.cover img {
+.cover__image {
   /* Drop shadow on product image */
   filter: drop-shadow(0 5px 3px #000);
+  animation: drop 1.5s ease;
 }
 
+/* 
+ * DROP ANIMATION
+ */
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
