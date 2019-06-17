@@ -122,3 +122,8 @@ header {
   flex: 1;
 }
 
+.cover img {
+  /* Drop shadow on product image */
+  filter: drop-shadow(0 5px 3px #000);
+}
+
