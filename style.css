@@ -1,0 +1,22 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  display: flex;
+  background-color: red;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header__brand {
+  background: lime;
+}
+
+.header__navbar {
+  background: cyan;
+}
+
+.header__cart {
+  background: black;
+}
