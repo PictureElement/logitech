@@ -58,7 +58,7 @@
     </section>
     <div class="thumbnails container">
       <ul class="thumbnails__product-thumbs">
-        <li class="product-thumbs__item"><a class="product-thumbs__link" href="#"><img class="product-thumbs__image" src="media/1.png" alt="thumbnail 1"></a></li>
+        <li class="product-thumbs__item"><a class="product-thumbs__link active" href="#"><img class="product-thumbs__image" src="media/1.png" alt="thumbnail 1"></a></li>
         <li class="product-thumbs__item"><a class="product-thumbs__link" href="#"><img class="product-thumbs__image" src="media/2.png" alt="thumbnail 1"></a></li>
         <li class="product-thumbs__item"><a class="product-thumbs__link" href="#"><img class="product-thumbs__image" src="media/3.png" alt="thumbnail 1"></a></li>
       </ul>
@@ -73,6 +73,31 @@
       navbar.classList.toggle('d-md-none');
       tools.classList.toggle('d-md-none');
     });
+
+    var coverImage = document.querySelector('.cover__image');
+    var textAreaCoverImage = document.querySelector('text-area__cover-image');
+    var thumbnails = document.querySelectorAll('product-thumbs__image');
+
+    var thumbnailList = document.querySelector('.thumbnails__product-thumbs');
+    var coverImage = document.querySelector('.cover__image');
+    var textAreaCoverImage = document.querySelector('.text-area__cover-image');
+    var activeThumbnailLink = document.querySelector('.thumbnails__product-thumbs .product-thumbs__item:first-child .product-thumbs__link');
+
+    function respondToTheClick(e) {
+      if ((e.target.nodeName === 'IMG') && (e.target.src !== coverImage.src)) {
+        // Remove active class
+        activeThumbnailLink.classList.toggle('active');
+        // Set image source
+        coverImage.src = e.target.src;
+        textAreaCoverImage.src = e.target.src;
+        // Set active class
+        activeThumbnailLink = e.target.parentElement;
+        activeThumbnailLink.classList.toggle('active');
+      }
+    }
+
+    thumbnailList.addEventListener('click', respondToTheClick);
+
 
   </script>
 </body>

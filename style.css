@@ -38,6 +38,10 @@ body {
   margin-left: auto;
 }
 
+.active {
+  opacity: 1 !important;
+}
+
 /**
  * HEADER
  */
@@ -239,6 +243,7 @@ header {
   align-items: center;
   margin: 0 auto;
   padding-left: 0;
+  height: 100%;
 }
 
 .product-thumbs__item {
