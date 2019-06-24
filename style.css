@@ -136,10 +136,25 @@ header {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
+  position: relative;
 }
 
-.navbar__link:hover {
-  text-decoration: underline;
+.navbar__link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  transition-property: left, right;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
+}
+
+.navbar__link:hover:before {
+  background-color: #00b8fc;
+  left: 0;
+  right: 0;
 }
 
 /*
