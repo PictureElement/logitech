@@ -2,6 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #00b8fc;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /**
@@ -48,6 +49,7 @@ body {
 header {
   background: #444;
   height: 10vh;
+  z-index: 10000;
 }
 
 .header__container {
@@ -299,10 +301,6 @@ header {
  */
 
 @media screen and (max-width: 1024px) {
-  .hero {
-    flex-direction: column;
-    height: auto;
-  }
   .introduction {
     text-align: center;
   }
@@ -323,11 +321,22 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
-  .thumbnails {
-    height: auto;
-  } 
+  .text-area__description, .text-area__lead {
+    margin: 0;
+  }
   .header {
     height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .hero {
+    margin-top: 81px; /* Compensate for header height */
+    height: calc(100vh - 81px - 81px); /* Compensate for header and thumbnail heights */
+  }
+  .thumbnails {
+    height: 81px;
   }
   .header__container {
     flex-direction: column;
@@ -344,6 +353,7 @@ header {
   .navbar__nav {
     padding: 0;
     flex-direction: column;
+    margin: 0;
   }
   .tools__nav {
     padding: 0;
@@ -375,6 +385,17 @@ header {
 }
 
 @media screen and (max-width: 576px) {
+  body {
+    min-height: 0;
+    overflow: auto;
+  }
+  .hero {
+    height: auto;
+    padding-top: 50px;
+  }
+  .thumbnails {
+    padding-top: 70px;
+  }
   .text-area__heading {
     font-size: 30px;
   }
@@ -386,5 +407,18 @@ header {
   }
   .text-area__cover-image {
     max-height: 250px;
+  }
+}
+
+@media screen and (max-width: 388px) {
+  .cta-area__add-to-cart-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .cta-area__online-retailers-btn {
+    display: block;
+    margin-left: 0;
+    margin: 0 auto;
+    margin-top: 15px;
   }
 }
