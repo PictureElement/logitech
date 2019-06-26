@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product Landing Page Demo | Logitech</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Marios Sofokleous">
+  <meta name="description" content="Using the BEM naming convention and the basic concepts of flexbox to develop a product landing page.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="media/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="media/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="media/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="media/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="media/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="media/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="media/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="media/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="media/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="media/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__brand">
+        <a class="brand-link" href="#">
+          <img class="brand__logomark" src="media/logo.svg" alt="logo">
+        </a>
+        <button class="brand__toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+      </div>
+      <nav class="header__navbar d-md-none">
+        <ul class="navbar__nav">
+          <li class="navbar__item"><a class="navbar__link" href="#">Specifications</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#">Order Now</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#">Support</a></li>
+        </ul>
+      </nav>
+      <div class="header__tools d-md-none">
+        <ul class="tools__nav">
+          <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-globe tools__icon" aria-hidden="true"></i></a></li>
+          <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-user-o tools__icon" aria-hidden="true"></i></a></li>
+          <li class="tools__item"><a class="tools__link" href="#"><i class="fa fa-shopping-cart tools__icon" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero container">
+      <div class="introduction">
+        <div class="introduction__text-area">
+          <h1 class="text-area__heading">MX MASTER 2S</h1>
+          <p class="text-area__lead">The new possibility machine</p>
+          <img draggable="false" class="text-area__cover-image" src="media/1.png" alt="Logitech MX Master 2S">
+          <p class="text-area__description">
+            Logitech’s flagship mouse is designed for power users and masters of 
+            their craft who want to get more done, more efficiently.
+          </p>
+        </div>
+        <div class="introduction__cta-area">
+          <button class="cta-area__add-to-cart-btn">ADD TO CART</button>
+          <button class="cta-area__online-retailers-btn">ONLINE RETAILERS</button>
+        </div>
+      </div>
+      <div class="cover">
+        <img draggable="false" class="cover__image" src="media/1.png" alt="Logitech MX Master 2S">
+      </div>
+    </section>
+    <div class="thumbnails container">
+      <ul class="thumbnails__product-thumbs">
+        <li class="product-thumbs__item"><a class="product-thumbs__link active" href="#"><img class="product-thumbs__image" src="media/1.png" alt="thumbnail 1"></a></li>
+        <li class="product-thumbs__item"><a class="product-thumbs__link" href="#"><img class="product-thumbs__image" src="media/2.png" alt="thumbnail 1"></a></li>
+        <li class="product-thumbs__item"><a class="product-thumbs__link" href="#"><img class="product-thumbs__image" src="media/3.png" alt="thumbnail 1"></a></li>
+      </ul>
+    </div>
+  </main>
+  <script>
+    /* Responsive top navigation logic */
+    var toggle = document.querySelector('.brand__toggle');
+    var navbar = document.querySelector('.header__navbar');
+    var tools = document.querySelector('.header__tools');
+
+    toggle.addEventListener('click', function() {
+      navbar.classList.toggle('d-md-none');
+      tools.classList.toggle('d-md-none');
+    });
+
+    /* Thumbnail gallery logic */
+    var coverImage = document.querySelector('.cover__image');
+    var textAreaCoverImage = document.querySelector('text-area__cover-image');
+    var thumbnails = document.querySelectorAll('product-thumbs__image');
+
+    var thumbnailList = document.querySelector('.thumbnails__product-thumbs');
+    var coverImage = document.querySelector('.cover__image');
+    var textAreaCoverImage = document.querySelector('.text-area__cover-image');
+    var activeThumbnailLink = document.querySelector('.thumbnails__product-thumbs .product-thumbs__item:first-child .product-thumbs__link');
+
+    function respondToTheClick(e) {
+      if ((e.target.nodeName === 'IMG') && (e.target.src !== coverImage.src)) {
+        // Remove active class
+        activeThumbnailLink.classList.toggle('active');
+        // Set image source
+        coverImage.src = e.target.src;
+        textAreaCoverImage.src = e.target.src;
+        // Set active class
+        activeThumbnailLink = e.target.parentElement;
+        activeThumbnailLink.classList.toggle('active');
+      }
+    }
+
+    thumbnailList.addEventListener('click', respondToTheClick);
+
+
+  </script>
+</body>
+</html>
