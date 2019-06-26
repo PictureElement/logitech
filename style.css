@@ -139,10 +139,10 @@ header {
   position: relative;
 }
 
-.navbar__link:before {
+.navbar__link:after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 25px;
   left: 50%;
   right: 50%;
   height: 2px;
@@ -151,7 +151,7 @@ header {
   transition-timing-function: ease-out;
 }
 
-.navbar__link:hover:before {
+.navbar__link:hover:after {
   background-color: #00b8fc;
   left: 0;
   right: 0;
@@ -304,11 +304,7 @@ header {
     height: auto;
   }
   .introduction {
-    margin-top: 5vh;
     text-align: center;
-  }
-  .introduction__cta-area {
-    padding-top: 20px;
   }
   .text-area__cover-image {
     display: block;
@@ -317,15 +313,6 @@ header {
   }
   .navbar__link, .tools__link {
     font-size: 16px;
-  }
-  .header__container {
-    /*height: auto;*/
-  }
-  .hero {
-    /*min-height: auto;*/
-  }
-  .thumbnails {
-    /*min-height: auto;*/
   }
   .cover {
     display: none;
@@ -336,37 +323,44 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
+  .thumbnails {
+    height: auto;
+  } 
+  .header {
+    height: auto;
+  }
+  .header__container {
+    flex-direction: column;
+  }
   .header__brand {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,.2);
-  }
-  .brand__toggle {
-    display: block;
-  }
-  .header {
-    height: auto;
+    width: 100%;
   }
   .header__navbar {
-    text-align: center;
-  }
-  .header__container, .navbar__nav, .tools__nav {
-    display: block;
+    width: 100%;
   }
   .navbar__nav {
     padding: 0;
-    margin: 0;
+    flex-direction: column;
+  }
+  .tools__nav {
+    padding: 0;
+  }
+  .brand__toggle {
+    display: inline-block;
   }
   .navbar__item {
     border-bottom: 1px solid rgba(255,255,255,.2);
-    height: 10vh;
+    height: 48px;
     box-sizing: border-box;
+    text-align: center;
   }
   .navbar__link {
     display: block;
     width: 100%;
-    line-height: 10vh;
+    line-height: 48px;
   }
   .header__tools {
     text-align: center;
@@ -378,50 +372,6 @@ header {
   .d-md-none {
     display: none;
   }
-  /*
-  .brand__toggle {
-    display: block;
-  }
-  .header__navbar, .header__tools {
-    display: block;
-  }
-  .navbar__nav {
-    position: absolute;
-    top: 10vh;
-    left: 0;
-    right: 0;
-    display: block;
-    background: #000;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .navbar__item {
-    height: 10vh;
-    position: relative;
-    box-sizing: border-box;
-  }
-  .navbar__item {
-    border-bottom: 1px solid rgba(255,255,255,.5);
-  }
-  .navbar__link {
-    width: 100%;
-    height: 100%;
-    display: block;
-    line-height: 10vh;
-  }
-  .tools__nav {
-    position: absolute;
-    top: 40vh;
-    left: 0;
-    right: 0;
-    display: block;
-    background: #000;
-    margin: 0;
-    text-align: center;
-    padding: 0;
-  }
-  */
 }
 
 @media screen and (max-width: 576px) {
